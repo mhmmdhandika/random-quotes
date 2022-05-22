@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;1,600;1,700&display=swap');
+
+main {
+  background-color: #dddddd;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+section {
+  padding: 3rem;
+  max-width: 400px;
+  min-width: 15rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  border: 9px solid black;
+}
+
+/* make a quote symbol in front of border */
+#quote-symbol {
+  background-color: #dddddd;
+  position: absolute;
+  top: -30px;
+  right: 20px;
+}
+
+#quote {
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+#author {
+  font-weight: bold;
+}
