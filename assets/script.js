@@ -1,14 +1,15 @@
 const quoteElement = document.getElementById('quote');
 const authorElement = document.getElementById('author');
+const quoteAPI = async () => {
+  const response = await fetch('https://type.fit/api/quotes');
+  const response_1 = await response.json();
+  return response_1;
+};
 
-// TODO: refactor the fetch
-setInterval(() => {
-  const randomNum = Math.floor(Math.random() * 101);
-  fetch('https://type.fit/api/quotes')
-    .then(response => response.json())
-    .then(response => {
-      console.log(response[randomNum]);
-      quoteElement.innerText = response[randomNum].text;
-      authorElement.innerText = response[randomNum].author;
-    });
-}, 2500);
+setInterval(async () => {
+  const dataQuote = await quoteAPI();
+  const randomNum = Math.floor(Math.random() * dataQuote.length);
+  quoteElement.innerText = dataQuote[randomNum].text;
+  authorElement.innerText = dataQuote[randomNum].author;
+  console.log(`${dataQuote[randomNum].text}\n${dataQuote[randomNum].author}`);
+}, 3000);
